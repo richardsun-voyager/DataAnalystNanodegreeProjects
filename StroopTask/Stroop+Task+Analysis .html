@@ -11778,7 +11778,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -11794,7 +11794,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -11809,7 +11809,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">stroop_data</span><span class="o">.</span><span class="n">columns</span>
@@ -11823,7 +11823,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -11838,7 +11838,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">stroop_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -11852,7 +11852,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -11901,35 +11901,9 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>1.What is our independent variable? What is our dependent variable?</em></p>
-<p>The congruent condition is independent variable, it is controlled in the experiment. The time it takes to name the ink colors in equally-sized lists is dependent variable, it is ralated to whether the colors match the words.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>2.What is an appropriate set of hypotheses for this task? What kind of statistical test do you expect to perform? </em></p>
-<ul>
-<li>Null Hypothesis: congruent condition doesn't affect the response time, there are no actual differences of time between congruent group and incongruent group in terms of statistics.</li>
-<li>Alternative Hypothesis: congruent condition does affect the response time.</li>
-</ul>
-<p>There are only 24 samples in this dataset, less than 30, so I will use T test to perform the analysis.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">stroop_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -11943,7 +11917,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12007,9 +11981,38 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>1.What is our independent variable? What is our dependent variable?</em></p>
+<p>The color of a color word is independent variable, it is controlled in the experiment by the scientists. In congruent group, the colors displayed are consistant with the words whereas in the other group the colors are not consistant with the words.</p>
+<p>The time it takes to name the ink colors in equally-sized lists is dependent variable, it is ralated to whether the colors match the words.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>2.What is an appropriate set of hypotheses for this task? What kind of statistical test do you expect to perform? </em></p>
+<p>There are only 24 samples(X) in this dataset, it's difficult to obtain response time distribution of the entire population(U), so instead, here we can use the means of the samples to infer means of the population. And from the summary of the data, we can see that the mean time μI of incongruent samples is obviously larger mean timeμC of congruent samples. 
+We'll use a hypothesis test to determine whether there is enough evidence in the samples(X) to infer that these two means are different for the entire population.</p>
+<ul>
+<li>Null Hypothesis(H0): the mean time μC  of congruent population is equal to that μI of incongruent population.</li>
+<li>Alternative Hypothesis(H1): the mean time μC  of congruent population is not equal to that μI of incongruent population.</li>
+</ul>
+<p>Allowing for the small size of samples, I will use Students't test to perform the analysis, and I assume the distributions of both response time are Gaussian. As this is paired data, we can simply analyze the differences, I will calculate the time differences between these two groups, and calculate the mean, standard error, freedom degree, and get corresponding p-value to determine whether accept or reject null hypothesis. If the p-value is less than or equal to the level of significance(5%), we can reject H0.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -12024,11 +12027,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xe8b0ba8&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16dc1dd8&gt;</pre>
 </div>
 
 </div>
@@ -12432,7 +12435,7 @@ ZpYJB7aZWSb+B5+KT7y7+smqAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">stroop_data</span><span class="o">.</span><span class="n">Congruent</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Histogram of Congruent&quot;</span><span class="p">)</span>
@@ -12446,11 +12449,11 @@ ZpYJB7aZWSb+B5+KT7y7+smqAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[43]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x17ded4e0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16f07d30&gt;</pre>
 </div>
 
 </div>
@@ -12573,7 +12576,7 @@ ktQAw16SGmDYS1IDDHtJaoBhL0kN+P/QdatdZJflHwAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">stroop_data</span><span class="o">.</span><span class="n">Incongruent</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Histogram of Incongruent&quot;</span><span class="p">)</span>
@@ -12587,11 +12590,11 @@ ktQAw16SGmDYS1IDDHtJaoBhL0kN+P/QdatdZJflHwAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[44]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x17eaed68&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x176317b8&gt;</pre>
 </div>
 
 </div>
@@ -12719,7 +12722,7 @@ DTDsJakBhr0kNcCwl6QGGPaS1ADDXpIaYNhLUgP+Pz0abu9mRYARAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#Mean and Standard Error for each group</span>
@@ -12752,7 +12755,7 @@ Standard value of time differences 4.86482691036
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -12761,8 +12764,8 @@ Standard value of time differences 4.86482691036
 <span class="n">time_dif_std_sample</span> <span class="o">=</span> <span class="n">time_dif_std</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_dif</span><span class="p">))</span>
 <span class="n">t_value</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">time_dif_mean</span><span class="o">/</span><span class="n">time_dif_std_sample</span><span class="p">)</span>
 <span class="n">t_alpha_percentile</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">time_dif</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  
-<span class="k">print</span> <span class="s1">&#39;Critical value:{0:.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t_value</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;T value when alpha is 0.025:{0:.2f} &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t_alpha_percentile</span><span class="p">)</span>
+<span class="k">print</span> <span class="s1">&#39;Absolute T test value:{0:.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t_value</span><span class="p">)</span>
+<span class="k">print</span> <span class="s1">&#39;Critical value when alpha is 0.025:{0:.2f} &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t_alpha_percentile</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12775,8 +12778,8 @@ Standard value of time differences 4.86482691036
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Critical value:8.02
-T value when alpha is 0.025:2.07 
+<pre>Absolute T test value:8.02
+Critical value when alpha is 0.025:2.07 
 </pre>
 </div>
 </div>
@@ -12787,35 +12790,7 @@ T value when alpha is 0.025:2.07
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">confint</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="o">-</span> <span class="n">t_alpha_percentile</span> <span class="o">*</span> <span class="n">time_dif_std_sample</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="n">t_alpha_percentile</span> <span class="o">*</span> <span class="n">time_dif_std_sample</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;Confidence Interval is: ({0:.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">confint</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="s1">&#39;, {0:.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">confint</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="s1">&#39;)&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Confidence Interval is: (-2.05 , 2.05 )
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">p_value</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">t_value</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
@@ -12847,7 +12822,7 @@ T value when alpha is 0.025:2.07
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><em>5.Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?</em></p>
-<p>As the calculation showed above, the length of the data is 24, so the freedom degree of t distribution is 23. The mean and standard error of time differences are -7.96 and 4.86 under the freedom degree of 23, and the critical statistic value is 8.02, the confidence level of time difference is (- 2.05, 2.05), the p_value is almost zero, which means given the assumption that response time of two groups are the same, the possibility of appearing such a big difference is very small, it is very unlikely that these two groups have the same response time. So we can reject the null hypothesis, there are obvious differences between the time of congruent and incongruent groups. The results matched up with my expectations.</p>
+<p>As the calculation showed above, the length of the data is 24, so the freedom degree of t distribution is 23. Here I set alpha = 0.5 in two-tailed test, namely 95% confidence level. The mean and standard error of time differences are -7.96 and 4.86 under the freedom degree of 23, and the absolute t test value is 8.02, much larger than critical value 2.07 , the p_value is almost zero, which means given the assumption that response time of two groups are the same, the possibility of appearing such a big difference is very small, it is very unlikely that these two groups have the same response time. So we can reject the null hypothesis, there are obvious differences between the time of congruent and incongruent groups. The results matched up with my expectations.</p>
 
 </div>
 </div>
